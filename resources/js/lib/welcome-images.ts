@@ -1,10 +1,10 @@
 export const WELCOME_BACKGROUND_IMAGES = [
-    "/shot-breathtaking-giant-mountain-covered-forests-gleaming-cloudy-sky.jpg",
-    "/mountain-forest-blue-sky.jpg",
-    "/mountain-clear-day.jpg",
-    "/landscape-temple-clouds-top-batur-volcano-bali-indonesia.jpg",
-    "/landscape-dawn-overlooking-volcano-batur-volcano-bali-indonesia.jpg",
-    "/cloudy-mountains-landscape.jpg",
-    "/beautiful-landscape.jpg",
-    "/wmremove-transformed.jpeg"
+    "/shot-breathtaking-giant-mountain-covered-forests-gleaming-cloudy-sky-min.jpg",
+    "/mountain-forest-blue-sky-min.jpg",
+    "/mountain-clear-day-min.jpg",
+    "/landscape-temple-clouds-top-batur-volcano-bali-indonesia-min.jpg",
+    "/landscape-dawn-overlooking-volcano-batur-volcano-bali-indonesia-min.jpg",
+    "/cloudy-mountains-landscape-min.jpg",
+    "/beautiful-landscape-min.jpg",
+    "/wmremove-transformed-min.jpeg"
 ];
