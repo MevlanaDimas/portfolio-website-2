@@ -6,5 +6,5 @@ export const WELCOME_BACKGROUND_IMAGES = [
     "/landscape-dawn-overlooking-volcano-batur-volcano-bali-indonesia-min.jpg",
     "/cloudy-mountains-landscape-min.jpg",
     "/beautiful-landscape-min.jpg",
-    "/wmremove-transformed-min.jpeg"
+    "/wmremove-transformed.jpeg"
 ];
