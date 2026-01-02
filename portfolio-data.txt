@@ -1,0 +1,16 @@
+abouts:
+	1. 
+		- id = 1
+	 	- bio = A recent Electrical Engineering graduate, I specialize in biomedical research, data science, and backend developing. I am highly motivated and eager to learn new technologies and methodologies. My strengths include adaptability, critical thinking, and collaboration in team settings. My organizational and work experiences have sharpened my leadership abilities, enhanced my communication skills, and honed my strategic thinking.
+projects:
+	1. 
+		- id = 1
+		- title = Prediction of Benign Breast Cancer Using the ANN Method
+		- description = This project focuses on developing a prediction model to detect benign breast cancer using the Artificial Neural Network (ANN) method. The objective is to assist medical professionals in providing early, intensive treatment, recognizing that benign breast cancer can develop into a malignant form. This model utilizes secondary data from a previous study for its training and testing phases. The results demonstrate that the proposed ANN model successfully achieves an accuracy rate of 82.35%. This outcome is superior to the binary logistic regression method from the prior study, which only reached an accuracy of 79.2%.
+		- github = https://github.com/MevlanaDimas/ANN_3_Layers_Breast_Cancer_Prediction.git
+		- tags = Python, ANN, Artificial Neural Network, Binary LOgistic Regression, AI
+	2.
+		- id = 2
+		- title = Comparison of Classification between ANN and Binary Gradient Boosted Decision Tree in Malaria-Infected Red Blood Cell Images
+		- description = This project provides a comparison between two machine learning methods, Artificial Neural Network (ANN) and Light Gradient Boosted Machine (LGBM), for the classification of red blood cell images infected with malaria. Using 127 features manually extracted from a total of 27,600 images, both models were tested to determine their performance. The results indicate that the Decision Tree-based LGBM model achieved a superior accuracy of 91%. In contrast, the ANN model only managed an accuracy of 62%. The conclusion is that traditional machine learning methods like LGBM are more effective for data with manually extracted features.
+		- github = https://github.com/MevlanaDimas/Classification_of_Red_Blood_Cell_Infected_by_Malaria_using_ANN.git
