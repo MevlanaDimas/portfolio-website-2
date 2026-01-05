@@ -54,7 +54,10 @@ export default function AboutIndex() {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="About" />
+            <Head>
+                <title>About</title>
+                <meta name="description" content="Learn more about me, my background, and my professional journey." />
+            </Head>
             <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-5">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <form onSubmit={searchData} className="w-full md:w-1/3">

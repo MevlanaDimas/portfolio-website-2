@@ -32,7 +32,10 @@ export default function Profile({
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Profile settings" />
+            <Head>
+                <title>Profile settings</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Head>
 
             <SettingsLayout>
                 <div className="space-y-6">

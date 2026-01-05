@@ -60,7 +60,12 @@ export default function Welcome({
 
     return (
         <>
-            <Head title="Welcome">
+            <Head>
+                <title>Welcome</title>
+                <meta
+                    name="description"
+                    content="Welcome to my portfolio. Discover my projects, learn more about my skills and professional journey."
+                />
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700"

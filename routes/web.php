@@ -26,4 +26,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
+// Temporary route to create storage link on shared hosting
+Route::get('/storage-link', function () {
+    $target = storage_path('app/public');
+    $link = public_path('storage');
+    
+    symlink($target, $link);
+    
+    return 'Storage link created successfully!';
+});
+
 require __DIR__.'/settings.php';

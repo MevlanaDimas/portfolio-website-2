@@ -42,7 +42,10 @@ export default function TwoFactor({
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Two-Factor Authentication" />
+            <Head>
+                <title>Two-Factor Authentication</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Head>
             <SettingsLayout>
                 <div className="space-y-6">
                     <HeadingSmall

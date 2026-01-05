@@ -16,7 +16,10 @@ export default function Register() {
             title="Create an account"
             description="Enter your details below to create your account"
         >
-            <Head title="Register" />
+            <Head>
+                <title>Register</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Head>
             <Form
                 {...store.form()}
                 resetOnSuccess={['password', 'password_confirmation']}

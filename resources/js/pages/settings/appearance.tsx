@@ -18,7 +18,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function Appearance() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Appearance settings" />
+            <Head>
+                <title>Appearance settings</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Head>
 
             <SettingsLayout>
                 <div className="space-y-6">
