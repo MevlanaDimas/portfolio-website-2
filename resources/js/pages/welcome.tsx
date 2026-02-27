@@ -44,6 +44,7 @@ export default function Welcome({
     // Preload images
     const preloadedImages = useRef<HTMLImageElement[]>([]);
     useEffect(() => {
+        // Preload ALL images to ensure smooth transitions without network stutter
         WELCOME_BACKGROUND_IMAGES.forEach((src) => {
             const img = new Image();
             img.src = src;
@@ -89,7 +90,7 @@ export default function Welcome({
                 {!isLoading && <SystemStatus />}
                 
                 {/* Navigation */}
-                <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 lg:p-10 mix-blend-difference text-white">
+                <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 lg:p-10 text-white">
                     <Magnetic>
                         <Link href="/" className="block text-xl font-bold tracking-tighter uppercase transition duration-500 hover:rotate-x-360">
                             <img 

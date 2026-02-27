@@ -206,7 +206,7 @@ export const ProjectVisual = memo(function ProjectVisual({ project }: { project:
                                 src={currentImageUrl} 
                                 alt={project.title} 
                                 decoding="async"
-                                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-700"
+                                className="absolute inset-0 w-full h-full object-contain grayscale group-hover:grayscale-0 transition-[filter] duration-700"
                             />
                         </motion.div>
                     )}

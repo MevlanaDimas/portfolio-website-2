@@ -45,6 +45,11 @@ class ProjectsController extends Controller
             DB::transaction(function () use ($request) {
                 $data = $request->validated();
                 
+                // Map 'github' input to 'github_link' column
+                if (isset($data['github'])) {
+                    $data['github_link'] = $data['github'];
+                }
+
                 $project = Projects::create($data);
 
                 if (!empty($data['images'])) {
@@ -68,10 +73,15 @@ class ProjectsController extends Controller
             DB::transaction(function () use ($request, $id) {
                 $project = Projects::findOrFail($id);
                 $data = $request->validated();
+                
+                // Map 'github' input to 'github_link' column
+                if (isset($data['github'])) {
+                    $data['github_link'] = $data['github'];
+                }
 
                 $project->update($data);
 
-                $incomingImages = $request->input('images', []);
+                $incomingImages = $data['images'] ?? [];
                 $keptImageIds = array_filter(array_column($incomingImages, 'id'));
 
                 // Delete removed images
@@ -127,7 +137,8 @@ class ProjectsController extends Controller
             $file = $imageData['image'];
             $originalName = $imageData['image_name'] ?? $file->getClientOriginalName();
             // Sanitize filename
-            $filename = time() . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '-' . uniqid() . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . ($extension ? '.' . $extension : '');
             
             $path = Storage::disk('gcs')->putFileAs('projects', $file, $filename, 'public');
             $url = Storage::disk('gcs')->url($path);

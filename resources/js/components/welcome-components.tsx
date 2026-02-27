@@ -4,7 +4,7 @@ import { ArrowDown, Github, Globe, Linkedin } from 'lucide-react';
 import { GlitchTitle, TextReveal, TagList } from '@/components/typography';
 import { TimelineHeader, TimelineItem, ProjectVisual } from '@/components/timeline';
 import { WELCOME_BACKGROUND_IMAGES } from '@/lib/welcome-images';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Magnetic } from '@/components/effects';
 
 export const AboutVisual = memo(({ photoUrl, photoName }: { photoUrl?: string, photoName?: string }) => (
@@ -93,27 +93,36 @@ export const ScrollProgress = memo(() => {
     );
 });
 
-export const BackgroundLayer = memo(({ index }: { index: number }) => (
-    <div className="fixed inset-0 z-0 bg-black">
-        <AnimatePresence mode="popLayout">
-            <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute inset-0"
-            >
-                <img 
-                    src={WELCOME_BACKGROUND_IMAGES[index % WELCOME_BACKGROUND_IMAGES.length]} 
-                    alt="Background" 
-                    className="w-full h-full object-cover opacity-50"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-            </motion.div>
-        </AnimatePresence>
-    </div>
-));
+export const BackgroundLayer = memo(({ index }: { index: number }) => {
+    const activeIndex = index % WELCOME_BACKGROUND_IMAGES.length;
+
+    return (
+        <div className="fixed top-0 left-0 w-full h-screen z-0 bg-black pointer-events-none">
+            {WELCOME_BACKGROUND_IMAGES.map((src, i) => {
+                const isActive = i === activeIndex;
+                return (
+                    <div
+                        key={i}
+                        className={`absolute inset-0 ${isActive ? 'z-10' : 'z-0'}`}
+                        style={{
+                            opacity: isActive ? 1 : 0,
+                            visibility: isActive ? 'visible' : 'hidden',
+                            transition: `opacity 1000ms ease-in-out, visibility 0ms linear ${isActive ? '0ms' : '1000ms'}`
+                        }}
+                    >
+                        <img 
+                            src={src} 
+                            alt="" 
+                            decoding="async"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                );
+            })}
+            <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/60 via-black/40 to-black/80 pointer-events-none" />
+        </div>
+    );
+});
 
 export const HeroSection = memo(({ onVisible }: { onVisible: () => void }) => {
     const { scrollY } = useScroll();

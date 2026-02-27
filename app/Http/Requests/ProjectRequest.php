@@ -47,7 +47,7 @@ class ProjectRequest extends FormRequest
             'title.max' => 'Title must be less than 255 characters.',
             'images.required' => 'Image is required.',
             'images.array' => 'Image must be an array.',
-            'image.min' => 'At least one image is required.',
+            'images.min' => 'At least one image is required.',
             'images.*.id.integer' => 'Image ID must be an integer.',
             'images.*.image.image' => 'Image must be an image.',
             'images.*.image.mimes' => 'Image must be a png, jpg or jpeg',

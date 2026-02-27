@@ -85,7 +85,7 @@ export function CustomCursor() {
 
     return (
         <motion.div
-            className="fixed top-0 left-0 w-4 h-4 bg-[#f53003] rounded-full pointer-events-none z-[100] mix-blend-difference"
+            className="fixed top-0 left-0 w-4 h-4 bg-[#f53003] rounded-full pointer-events-none z-[100]"
             animate={{ 
                 x: mousePosition.x - 8, 
                 y: mousePosition.y - 8,
@@ -100,10 +100,11 @@ export const Noise = memo(function Noise() {
     return (
         <div className="fixed inset-0 z-[60] pointer-events-none overflow-hidden">
             <div 
-                className="absolute inset-[-200%] w-[400%] h-[400%] opacity-[0.08] mix-blend-overlay"
+                className="absolute inset-[-200%] w-[400%] h-[400%] opacity-[0.05]"
                 style={{ 
                     backgroundImage: `url("${noiseOverlay}")`,
-                    animation: 'noise 0.2s infinite'
+                    animation: 'noise 0.2s infinite',
+                    willChange: 'transform'
                 }} 
             />
             <style>{`
@@ -158,7 +159,7 @@ export function SystemStatus() {
     if (!isEnabled) return null;
 
     return (
-        <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-1 text-[10px] font-mono text-[#f53003] mix-blend-difference tracking-widest opacity-70 pointer-events-none">
+        <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-1 text-[10px] font-mono text-[#f53003] tracking-widest opacity-70 pointer-events-none">
             <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-[#f53003] rounded-full animate-pulse" />
                 <span>SYSTEM.ONLINE</span>
